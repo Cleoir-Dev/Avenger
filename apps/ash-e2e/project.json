@@ -1,0 +1,10 @@
+{
+  "name": "ash-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/ash-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["ash"],
+  "// targets": "to see all targets run: nx show project ash-e2e --web",
+  "targets": {}
+}
