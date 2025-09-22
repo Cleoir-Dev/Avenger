@@ -1,0 +1,7 @@
+{
+  "name": "storm",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

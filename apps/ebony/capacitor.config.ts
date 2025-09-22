@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'ebony',
-  webDir: '../../dist/apps/ebony',
+  webDir: '../../dist/apps/ebony/browser',
   bundledWebRuntime: false,
   server: {
     androidScheme: 'https',

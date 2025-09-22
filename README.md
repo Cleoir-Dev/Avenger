@@ -1,96 +1,133 @@
-# Avenger
+# Avenger Workspace
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+Este é um monorepo Nx gerenciado com `pnpm`, contendo múltiplas aplicações Ionic/Angular e bibliotecas compartilhadas.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## 1. Pré-requisitos
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+Antes de começar, garanta que você tenha as seguintes ferramentas instaladas em seu sistema.
 
-## Run tasks
+### Node.js e pnpm
 
-To run tasks with Nx use:
+- **Node.js**: É necessário ter a versão LTS (Long-Term Support). Você pode baixar do [site oficial do Node.js](https://nodejs.org/).
+- **pnpm**: Usamos `pnpm` como gerenciador de pacotes por sua eficiência em monorepos. Para instalar, após ter o Node.js, rode:
+  ```bash
+  npm install -g pnpm
+  ```
 
-```sh
-npx nx <target> <project-name>
-```
+### Instalação por Sistema Operacional
 
-For example:
+- **Windows**: Recomenda-se usar o [nvm-windows](https://github.com/coreybutler/nvm-windows) para gerenciar as versões do Node.js. Após instalar, use `nvm install lts` e `nvm use lts`.
+- **macOS/Linux**: Recomenda-se usar o [nvm](https://github.com/nvm-sh/nvm). Após instalar, use `nvm install --lts` e `nvm use --lts`.
 
-```sh
-npx nx build myproject
-```
+## 2. Configuração do Ambiente Local
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+1.  **Clone o repositório** (se aplicável).
+2.  **Instale as dependências**: Na raiz do projeto, execute o comando:
+    ```bash
+    pnpm install
+    ```
+    Este comando irá instalar todas as dependências do workspace definidas no `package.json`.
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 3. Estrutura do Projeto
 
-## Add new projects
+O workspace está organizado da seguinte forma:
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+- `apps/`: Contém o código-fonte de todas as aplicações.
+  - `ash/`, `ebony/`, `fury/`, `whisper/`, `storm/`: Aplicações Ionic/Angular.
+  - `ash-e2e/`, etc.: Projetos de testes end-to-end (Cypress) para cada aplicação.
+- `libs/`: Contém as bibliotecas de código compartilhado.
+  - `service/`: Bibliotecas de serviços (ex: `CurrencyService`).
+  - `utils/`: Funções utilitárias (ex: `generateUuid`).
+- `package.json`: Define os scripts e dependências de todo o workspace.
+- `project.json`: Cada app e lib possui seu próprio `project.json` para definir seus alvos (build, serve, test, etc.).
+- `nx.json`: Arquivo de configuração principal do Nx.
 
-To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
-```sh
-npx nx add @nx/react
-```
+## 4. Scripts Disponíveis
 
-Use the plugin's generator to create new projects. For example, to create a new React app or library:
+Os seguintes scripts estão disponíveis no `package.json` para facilitar o desenvolvimento. Execute-os com `pnpm <script-name>`.
 
-```sh
-# Generate an app
-npx nx g @nx/react:app demo
+- **`serve:<app-name>`**: Inicia o servidor de desenvolvimento para uma aplicação específica.
+  - Ex: `pnpm serve:ash` (roda em `http://localhost:4200`)
+  - Ex: `pnpm serve:fury` (roda em `http://localhost:4202`)
 
-# Generate a library
-npx nx g @nx/react:lib some-lib
-```
+- **`build:<app-name>`**: Compila uma aplicação para produção.
+  - Ex: `pnpm build:ash`
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+- **`build:all`**: Compila todas as aplicações do workspace para produção.
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- **`test:<project-name>`**: Roda os testes unitários para um app ou lib.
+  - Ex: `pnpm test:ash`
+  - Ex: `pnpm test:utils`
 
-## Set up CI!
+- **`test:all`**: Roda todos os testes unitários do workspace.
 
-### Step 1
+- **`lint:all`**: Executa o linter em todos os projetos.
 
-To connect to Nx Cloud, run the following command:
+- **`graph`**: Abre uma visualização gráfica das dependências do projeto.
 
-```sh
-npx nx connect
-```
+## 5. Como Contribuir
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+Siga estes guias para adicionar novas funcionalidades ao workspace.
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### Como Criar uma Nova Aplicação Ionic
 
-### Step 2
+Vamos usar o exemplo de criar um novo app chamado `nova-app`.
 
-Use the following command to configure a CI workflow for your workspace:
+1.  **Gerar a Aplicação Angular Base**:
+    ```bash
+    pnpm nx generate @nx/angular:application --name=nova-app --directory=apps/nova-app --style=scss --routing=true
+    ```
+    *(Escolha `esbuild`, `jest`, `cypress` nas opções)*
 
-```sh
-npx nx g ci-workflow
-```
+2.  **Adicionar a Configuração Ionic**:
+    ```bash
+    pnpm nx generate @nxext/ionic-angular:configuration --project=nova-app --capacitor=true
+    ```
+    *(Escolha o template `tabs`)*
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+3.  **Configurar a Porta Fixa**: Abra o arquivo `apps/nova-app/project.json`, encontre o alvo `serve` e adicione a opção `port`:
+    ```json
+    "serve": {
+      "executor": "@angular/build:dev-server",
+      "options": {
+        "port": 4205 // Use a próxima porta disponível
+      },
+      // ...
+    }
+    ```
 
-## Install Nx Console
+4.  **Adicionar Scripts**: Adicione os scripts `serve:nova-app`, `build:nova-app`, e `test:nova-app` ao `package.json`.
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+### Como Criar uma Nova Biblioteca de Funções (Utils)
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Vamos usar o exemplo de criar uma biblioteca `validators`.
 
-## Useful links
+1.  **Gerar a Biblioteca**:
+    ```bash
+    pnpm nx generate @nx/angular:library --name=validators --directory=libs/validators --buildable
+    ```
 
-Learn more:
+2.  **Implementar a Lógica**: Crie seus arquivos de função dentro de `libs/validators/src/lib/` (ex: `email-validator.ts`).
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+3.  **Exportar**: Exporte suas funções no arquivo `libs/validators/src/index.ts`.
+    ```typescript
+    export * from './lib/email-validator';
+    ```
 
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### Como Criar uma Nova Biblioteca de Serviço (Service)
+
+Vamos usar o exemplo de criar um `AuthService`.
+
+1.  **Gerar a Biblioteca**:
+    ```bash
+    pnpm nx generate @nx/angular:library --name=auth --directory=libs/auth --buildable
+    ```
+
+2.  **Implementar o Serviço**: Crie o arquivo `libs/auth/src/lib/auth.service.ts` com a anotação `@Injectable({ providedIn: 'root' })`.
+
+3.  **Exportar**: Exporte o serviço no arquivo `libs/auth/src/index.ts`.
+    ```typescript
+    export * from './lib/auth.service';
+    ```
+
+Após criar qualquer biblioteca, você pode importá-la em qualquer aplicação usando o alias `@avenger/<nome-da-lib>`, por exemplo: `import { emailValidator } from '@avenger/validators';`.

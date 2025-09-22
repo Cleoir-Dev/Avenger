@@ -1,0 +1,7 @@
+{
+  "name": "fury",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

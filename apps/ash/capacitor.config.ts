@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'ash',
-  webDir: '../../dist/apps/ash',
+  webDir: '../../dist/apps/ash/browser',
   bundledWebRuntime: false,
   server: {
     androidScheme: 'https',

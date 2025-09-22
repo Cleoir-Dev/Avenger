@@ -1,0 +1,10 @@
+{
+  "name": "storm-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/storm-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["storm"],
+  "// targets": "to see all targets run: nx show project storm-e2e --web",
+  "targets": {}
+}
