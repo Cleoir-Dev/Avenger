@@ -1,133 +1,133 @@
 # Avenger Workspace
 
-Este é um monorepo Nx gerenciado com `pnpm`, contendo múltiplas aplicações Ionic/Angular e bibliotecas compartilhadas.
+This is an Nx monorepo managed with `pnpm`, containing multiple Ionic/Angular applications and shared libraries.
 
-## 1. Pré-requisitos
+## 1. Prerequisites
 
-Antes de começar, garanta que você tenha as seguintes ferramentas instaladas em seu sistema.
+Before you begin, ensure you have the following tools installed on your system.
 
-### Node.js e pnpm
+### Node.js and pnpm
 
-- **Node.js**: É necessário ter a versão LTS (Long-Term Support). Você pode baixar do [site oficial do Node.js](https://nodejs.org/).
-- **pnpm**: Usamos `pnpm` como gerenciador de pacotes por sua eficiência em monorepos. Para instalar, após ter o Node.js, rode:
+- **Node.js**: The LTS (Long-Term Support) version is required. You can download it from the [official Node.js website](https://nodejs.org/).
+- **pnpm**: We use `pnpm` as the package manager for its efficiency in monorepos. To install it after setting up Node.js, run:
   ```bash
   npm install -g pnpm
   ```
 
-### Instalação por Sistema Operacional
+### OS-Specific Installation
 
-- **Windows**: Recomenda-se usar o [nvm-windows](https://github.com/coreybutler/nvm-windows) para gerenciar as versões do Node.js. Após instalar, use `nvm install lts` e `nvm use lts`.
-- **macOS/Linux**: Recomenda-se usar o [nvm](https://github.com/nvm-sh/nvm). Após instalar, use `nvm install --lts` e `nvm use --lts`.
+- **Windows**: It is recommended to use [nvm-windows](https://github.com/coreybutler/nvm-windows) to manage Node.js versions. After installation, use `nvm install lts` and `nvm use lts`.
+- **macOS/Linux**: It is recommended to use [nvm](https://github.com/nvm-sh/nvm). After installation, use `nvm install --lts` and `nvm use --lts`.
 
-## 2. Configuração do Ambiente Local
+## 2. Local Environment Setup
 
-1.  **Clone o repositório** (se aplicável).
-2.  **Instale as dependências**: Na raiz do projeto, execute o comando:
+1.  **Clone the repository** (if applicable).
+2.  **Install dependencies**: In the project root, run the command:
     ```bash
     pnpm install
     ```
-    Este comando irá instalar todas as dependências do workspace definidas no `package.json`.
+    This command will install all workspace dependencies defined in `package.json`.
 
-## 3. Estrutura do Projeto
+## 3. Project Structure
 
-O workspace está organizado da seguinte forma:
+The workspace is organized as follows:
 
-- `apps/`: Contém o código-fonte de todas as aplicações.
-  - `ash/`, `ebony/`, `fury/`, `whisper/`, `storm/`: Aplicações Ionic/Angular.
-  - `ash-e2e/`, etc.: Projetos de testes end-to-end (Cypress) para cada aplicação.
-- `libs/`: Contém as bibliotecas de código compartilhado.
-  - `service/`: Bibliotecas de serviços (ex: `CurrencyService`).
-  - `utils/`: Funções utilitárias (ex: `generateUuid`).
-- `package.json`: Define os scripts e dependências de todo o workspace.
-- `project.json`: Cada app e lib possui seu próprio `project.json` para definir seus alvos (build, serve, test, etc.).
-- `nx.json`: Arquivo de configuração principal do Nx.
+- `apps/`: Contains the source code for all applications.
+  - `ash/`, `ebony/`, `fury/`, `whisper/`, `storm/`: Ionic/Angular applications.
+  - `ash-e2e/`, etc.: End-to-end (Cypress) test projects for each application.
+- `libs/`: Contains shared code libraries.
+  - `service/`: Service libraries (e.g., `CurrencyService`).
+  - `utils/`: Utility functions (e.g., `generateUuid`).
+- `package.json`: Defines the scripts and dependencies for the entire workspace.
+- `project.json`: Each app and lib has its own `project.json` to define its targets (build, serve, test, etc.).
+- `nx.json`: The main Nx configuration file.
 
-## 4. Scripts Disponíveis
+## 4. Available Scripts
 
-Os seguintes scripts estão disponíveis no `package.json` para facilitar o desenvolvimento. Execute-os com `pnpm <script-name>`.
+The following scripts are available in `package.json` to streamline development. Run them with `pnpm <script-name>`.
 
-- **`serve:<app-name>`**: Inicia o servidor de desenvolvimento para uma aplicação específica.
-  - Ex: `pnpm serve:ash` (roda em `http://localhost:4200`)
-  - Ex: `pnpm serve:fury` (roda em `http://localhost:4202`)
+- **`serve:<app-name>`**: Starts the development server for a specific application.
+  - Ex: `pnpm serve:ash` (runs on `http://localhost:4200`)
+  - Ex: `pnpm serve:fury` (runs on `http://localhost:4202`)
 
-- **`build:<app-name>`**: Compila uma aplicação para produção.
+- **`build:<app-name>`**: Builds an application for production.
   - Ex: `pnpm build:ash`
 
-- **`build:all`**: Compila todas as aplicações do workspace para produção.
+- **`build:all`**: Builds all applications in the workspace for production.
 
-- **`test:<project-name>`**: Roda os testes unitários para um app ou lib.
+- **`test:<project-name>`**: Runs unit tests for an app or lib.
   - Ex: `pnpm test:ash`
   - Ex: `pnpm test:utils`
 
-- **`test:all`**: Roda todos os testes unitários do workspace.
+- **`test:all`**: Runs all unit tests in the workspace.
 
-- **`lint:all`**: Executa o linter em todos os projetos.
+- **`lint:all`**: Lints all projects.
 
-- **`graph`**: Abre uma visualização gráfica das dependências do projeto.
+- **`graph`**: Opens a graphical visualization of the project's dependencies.
 
-## 5. Como Contribuir
+## 5. How to Contribute
 
-Siga estes guias para adicionar novas funcionalidades ao workspace.
+Follow these guides to add new features to the workspace.
 
-### Como Criar uma Nova Aplicação Ionic
+### How to Create a New Ionic Application
 
-Vamos usar o exemplo de criar um novo app chamado `nova-app`.
+Let's use the example of creating a new app called `new-app`.
 
-1.  **Gerar a Aplicação Angular Base**:
+1.  **Generate the Base Angular Application**:
     ```bash
-    pnpm nx generate @nx/angular:application --name=nova-app --directory=apps/nova-app --style=scss --routing=true
+    pnpm nx generate @nx/angular:application --name=new-app --directory=apps/new-app --style=scss --routing=true
     ```
-    *(Escolha `esbuild`, `jest`, `cypress` nas opções)*
+    *(Choose `esbuild`, `jest`, `cypress` in the options)*
 
-2.  **Adicionar a Configuração Ionic**:
+2.  **Add Ionic Configuration**:
     ```bash
-    pnpm nx generate @nxext/ionic-angular:configuration --project=nova-app --capacitor=true
+    pnpm nx generate @nxext/ionic-angular:configuration --project=new-app --capacitor=true
     ```
-    *(Escolha o template `tabs`)*
+    *(Choose the `tabs` template)*
 
-3.  **Configurar a Porta Fixa**: Abra o arquivo `apps/nova-app/project.json`, encontre o alvo `serve` e adicione a opção `port`:
+3.  **Set a Fixed Port**: Open the `apps/new-app/project.json` file, find the `serve` target, and add the `port` option:
     ```json
     "serve": {
-      "executor": "@angular/build:dev-server",
+      "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "port": 4205 // Use a próxima porta disponível
+        "port": 4205 // Use the next available port
       },
       // ...
     }
     ```
 
-4.  **Adicionar Scripts**: Adicione os scripts `serve:nova-app`, `build:nova-app`, e `test:nova-app` ao `package.json`.
+4.  **Add Scripts**: Add the `serve:new-app`, `build:new-app`, and `test:new-app` scripts to `package.json`.
 
-### Como Criar uma Nova Biblioteca de Funções (Utils)
+### How to Create a New Utility Library (Utils)
 
-Vamos usar o exemplo de criar uma biblioteca `validators`.
+Let's use the example of creating a `validators` library.
 
-1.  **Gerar a Biblioteca**:
+1.  **Generate the Library**:
     ```bash
     pnpm nx generate @nx/angular:library --name=validators --directory=libs/validators --buildable
     ```
 
-2.  **Implementar a Lógica**: Crie seus arquivos de função dentro de `libs/validators/src/lib/` (ex: `email-validator.ts`).
+2.  **Implement the Logic**: Create your function files inside `libs/validators/src/lib/` (e.g., `email-validator.ts`).
 
-3.  **Exportar**: Exporte suas funções no arquivo `libs/validators/src/index.ts`.
+3.  **Export**: Export your functions in the `libs/validators/src/index.ts` file.
     ```typescript
     export * from './lib/email-validator';
     ```
 
-### Como Criar uma Nova Biblioteca de Serviço (Service)
+### How to Create a New Service Library
 
-Vamos usar o exemplo de criar um `AuthService`.
+Let's use the example of creating an `AuthService`.
 
-1.  **Gerar a Biblioteca**:
+1.  **Generate the Library**:
     ```bash
     pnpm nx generate @nx/angular:library --name=auth --directory=libs/auth --buildable
     ```
 
-2.  **Implementar o Serviço**: Crie o arquivo `libs/auth/src/lib/auth.service.ts` com a anotação `@Injectable({ providedIn: 'root' })`.
+2.  **Implement the Service**: Create the `libs/auth/src/lib/auth.service.ts` file with the `@Injectable({ providedIn: 'root' })` decorator.
 
-3.  **Exportar**: Exporte o serviço no arquivo `libs/auth/src/index.ts`.
+3.  **Export**: Export the service in the `libs/auth/src/index.ts` file.
     ```typescript
     export * from './lib/auth.service';
     ```
 
-Após criar qualquer biblioteca, você pode importá-la em qualquer aplicação usando o alias `@avenger/<nome-da-lib>`, por exemplo: `import { emailValidator } from '@avenger/validators';`.
+After creating any library, you can import it into any application using the alias `@avenger/<lib-name>`, for example: `import { emailValidator } from '@avenger/validators';`.
