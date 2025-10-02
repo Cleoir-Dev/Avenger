@@ -87,4 +87,34 @@
     --icon-size-small: 1.25rem; /* 20px */
     --icon-size-medium: 1.5rem; /* 24px */
     --icon-size-large: 2rem; /* 32px */
+
+    /* Force Ionic to use our custom colors */
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
   }
+
+/* Ensure primary color is applied to all primary elements */
+ion-toolbar[color="primary"] {
+  --background: var(--ion-color-primary) !important;
+  --color: var(--ion-color-primary-contrast) !important;
+}
+
+ion-button[color="primary"] {
+  --background: var(--ion-color-primary) !important;
+  --color: var(--ion-color-primary-contrast) !important;
+}
+
+/* Override any dark mode styles that might interfere */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-color-primary: #864912 !important;
+    --ion-color-primary-rgb: 134, 73, 18 !important;
+    --ion-color-primary-contrast: #ffffff !important;
+    --ion-color-primary-contrast-rgb: 255, 255, 255 !important;
+    --ion-color-primary-shade: #764010 !important;
+    --ion-color-primary-tint: #925b2a !important;
+    
+    --ion-background-color: #ffffff !important;
+    --ion-text-color: #000000 !important;
+  }
+}

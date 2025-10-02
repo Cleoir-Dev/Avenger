@@ -7,6 +7,7 @@ import { Product } from '@avenger/interfaces';
   selector: 'app-product-list-horizontal',
   templateUrl: './product-list-horizontal.component.html',
   styleUrls: ['./product-list-horizontal.component.scss'],
+  standalone: true,
   imports: [ProductComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

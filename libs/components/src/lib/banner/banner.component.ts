@@ -6,6 +6,7 @@ import { Banner } from '@avenger/interfaces';
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
+  standalone: true,
   imports: [IonRow],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

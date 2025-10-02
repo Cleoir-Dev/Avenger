@@ -1,7 +1,36 @@
 {
-  "extends": "./tsconfig.lib.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "declarationMap": false
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "types": [],
+    "composite": false
   },
-  "angularCompilerOptions": {}
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "files": [
+    "src/index.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/test-setup.ts"
+  ],
+  "references": [
+    {
+      "path": "../interfaces/tsconfig.lib.json"
+    },
+    {
+      "path": "../dummy-data/tsconfig.lib.json"
+    }
+  ]
 }

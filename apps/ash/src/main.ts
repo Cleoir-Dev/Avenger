@@ -16,7 +16,13 @@ import { AppComponent } from './app/app.component';
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideIonicAngular(),
+    provideIonicAngular({
+      mode: 'ios'
+    }),
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],
+}).then(() => {
+  // Force light mode and disable dark mode
+  document.body.classList.remove('dark');
+  document.body.classList.add('light');
 });

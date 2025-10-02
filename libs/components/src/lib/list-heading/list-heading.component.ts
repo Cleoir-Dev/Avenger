@@ -5,6 +5,7 @@ import { IonItemDivider, IonButton } from '@ionic/angular/standalone';
   selector: 'app-list-heading',
   templateUrl: './list-heading.component.html',
   styleUrls: ['./list-heading.component.scss'],
+  standalone: true,
   imports: [IonItemDivider, IonButton]
 })
 export class ListHeadingComponent  implements OnInit {

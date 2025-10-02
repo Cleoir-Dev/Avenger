@@ -4,6 +4,9 @@
       [modules]="swiperModules"
       [slidesPerView]="1.8"
       [spaceBetween]="20"
+      direction="horizontal"
+      [freeMode]="true"
+      [centeredSlides]="false"
     >
       @for(product of products(); track $index) {
       <swiper-slide>

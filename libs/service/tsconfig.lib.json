@@ -1,12 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc",
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
     "types": [],
-    "composite": true
+    "composite": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -14,11 +14,23 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "files": [
+    "src/index.ts"
+  ],
   "exclude": [
     "src/**/*.spec.ts",
-    "src/test-setup.ts",
-    "jest.config.ts",
-    "src/**/*.test.ts"
+    "src/**/*.test.ts",
+    "src/test-setup.ts"
   ],
-  "include": ["src/**/*.ts"]
+  "references": [
+    {
+      "path": "../interfaces/tsconfig.lib.json"
+    },
+    {
+      "path": "../dummy-data/tsconfig.lib.json"
+    }
+  ]
 }

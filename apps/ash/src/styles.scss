@@ -9,6 +9,41 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+/* Import theme variables */
+@import './theme/variables.scss';
+
+/* Force light mode - disable dark mode completely */
+html, body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+ion-app {
+  background-color: #ffffff !important;
+}
+
+ion-content {
+  --background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Prevent dark mode from being applied */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  ion-app {
+    background-color: #ffffff !important;
+  }
+  
+  ion-content {
+    --background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+}
+
 // text sizes
 .small {
     font-size: var(--font-size-small) !important;

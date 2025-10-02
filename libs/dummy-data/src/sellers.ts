@@ -1,6 +1,4 @@
-import { Seller } from '@avenger/interfaces';
-
-export const sellers: Seller[] = [
+export const sellers: any[] = [
     {
       id: 1,
       name: 'Sweet Treats',

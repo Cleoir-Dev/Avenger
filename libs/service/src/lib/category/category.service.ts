@@ -10,6 +10,10 @@ export class CategoryService {
   constructor() { }
 
   getCategories(): Category[] {
-    return categories;
+    return categories.map((category: any): Category => ({
+      id: category.id,
+      name: category.name,
+      image: category.image
+    }));
   } 
 }

@@ -5,5 +5,9 @@
   },
   "angularCompilerOptions": {
     "compilationMode": "partial"
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.ngtypecheck.ts"
+  ]
 }

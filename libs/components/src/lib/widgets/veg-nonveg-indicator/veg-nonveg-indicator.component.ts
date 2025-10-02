@@ -5,6 +5,7 @@ import { Component, input, OnInit } from '@angular/core';
   selector: 'app-veg-nonveg-indicator',
   templateUrl: './veg-nonveg-indicator.component.html',
   styleUrls: ['./veg-nonveg-indicator.component.scss'],
+  standalone: true,
   imports: [NgClass]
 })
 export class VegNonvegIndicatorComponent  implements OnInit {

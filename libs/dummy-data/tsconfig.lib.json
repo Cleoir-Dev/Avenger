@@ -12,5 +12,10 @@
     "**/*.spec.ts",
     "**/*.test.ts"
   ],
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "references": [
+    {
+      "path": "../interfaces/tsconfig.lib.json"
+    }
+  ]
 }

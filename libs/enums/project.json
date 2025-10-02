@@ -4,6 +4,17 @@
   "sourceRoot": "libs/enums/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/enums",
+        "tsConfig": "libs/enums/tsconfig.lib.json",
+        "packageJson": "libs/enums/package.json",
+        "main": "libs/enums/src/index.ts",
+        "assets": ["libs/enums/*.md"]
+      }
+    },
     "lint": {
       "executor": "@nx/eslint:lint"
     }

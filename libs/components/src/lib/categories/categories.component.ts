@@ -8,6 +8,7 @@ import { ImageCircleComponent } from '../widgets/image-circle/image-circle.compo
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
+  standalone: true,
   imports: [IonCol, ImageCircleComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

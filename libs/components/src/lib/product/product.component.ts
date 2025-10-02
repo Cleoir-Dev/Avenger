@@ -30,6 +30,7 @@ import { Strings } from '@avenger/enums';
     VegNonvegIndicatorComponent,
     RouterLink
   ],
+  standalone: true,
 })
 export class ProductComponent implements OnInit {
   item = input<Product>();

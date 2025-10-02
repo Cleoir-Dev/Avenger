@@ -11,7 +11,6 @@ import {
   IonRow,
   IonCol,
   IonSearchbar,
-  IonTitle,
 } from '@ionic/angular/standalone';
 import {
   chevronDownOutline,
@@ -28,7 +27,7 @@ import {
   ListHeadingComponent,
   BannerComponent,
   CategoriesComponent,
-  ProductListComponentHorizontal,
+  ProductListHorizontalComponent,
 } from '@avenger/components';
 
 @Component({
@@ -39,7 +38,6 @@ import {
   imports: [
     IonHeader,
     IonToolbar,
-    IonTitle,
     IonContent,
     IonItem,
     IonLabel,
@@ -52,7 +50,7 @@ import {
     ListHeadingComponent,
     BannerComponent,
     CategoriesComponent,
-    ProductListComponentHorizontal
+    ProductListHorizontalComponent
   ],
 })
 export class HomePage {

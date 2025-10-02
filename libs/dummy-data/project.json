@@ -18,5 +18,6 @@
       "executor": "@nx/eslint:lint"
     }
   },
-  "tags": ["type:data", "scope:shared"]
+  "tags": ["type:data", "scope:shared"],
+  "implicitDependencies": ["interfaces"]
 }

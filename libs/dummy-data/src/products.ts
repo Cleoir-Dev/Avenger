@@ -1,6 +1,4 @@
-import { Product } from '@avenger/interfaces';
-
-export const products: Product[] = [
+export const products: any[] = [
   // Cakes
   {
     id: 13,
@@ -8,7 +6,7 @@ export const products: Product[] = [
     description: 
       'Our Chocolate Cake is a decadent masterpiece made with layers of moist chocolate sponge and creamy frosting. Perfectly sweet and rich, it’s a treat for chocolate enthusiasts and a centerpiece for celebrations. Enjoy the indulgence of premium cocoa in every bite.',
     rating: 4.5,
-    image: 'public/products/chocolate-cake.jpg',
+    image: 'products/chocolate-cake.jpg',
     category_id: 5,
     seller_id: 2,
     default_price: 25,
@@ -29,7 +27,7 @@ export const products: Product[] = [
     description: 
       'Our Black Forest Cake is a classic favorite featuring layers of moist chocolate sponge, cherries, and fresh whipped cream. Topped with chocolate shavings and cherries, it’s a symphony of flavors and textures. Perfect for celebrations or indulging your sweet cravings.',
     rating: 4.8,
-    image: 'public/products/black_forest_cake.jpg',
+    image: 'products/black_forest_cake.jpg',
     category_id: 5,
     seller_id: 2,
     default_price: 35,
@@ -49,7 +47,7 @@ export const products: Product[] = [
     description: 
       'This Red Velvet Cake is a luxurious dessert with a velvety texture and a hint of cocoa. Topped with creamy, tangy cream cheese frosting, it’s the ultimate treat for special occasions. Its vibrant red color and rich flavor make it a feast for both the eyes and the palate.',
     rating: 4.7,
-    image: 'public/products/red_velvet_cake.jpg',
+    image: 'products/red_velvet_cake.jpg',
     category_id: 5,
     seller_id: 2,
     default_price: 30,
@@ -70,7 +68,7 @@ export const products: Product[] = [
     description: 
       'Our Vanilla Cupcake is a delightful treat crafted with moist vanilla sponge cake and topped with a swirl of creamy, rich frosting. Perfect for satisfying your sweet tooth, it is made using the finest vanilla extracts. Enjoy a melt-in-your-mouth experience with every bite of this classic cupcake.',
     rating: 4.3,
-    image: 'public/products/vanilla-cupcake.jpg',
+    image: 'products/vanilla-cupcake.jpg',
     category_id: 1,
     seller_id: 1,
     default_price: 15,
@@ -93,7 +91,7 @@ export const products: Product[] = [
     description: 
       'Indulge in the richness of our Chocolate Cupcake, made with premium cocoa and topped with a luscious chocolate ganache. This cupcake offers a perfect balance of sweetness and flavor, making it a favorite for chocolate lovers. A treat for all occasions, it’s as decadent as it is delightful.',
     rating: 4.7,
-    image: 'public/products/chocolate-cupcake.jpg',
+    image: 'products/chocolate-cupcake.jpg',
     category_id: 1,
     seller_id: 1,
     default_price: 20,
@@ -117,7 +115,7 @@ export const products: Product[] = [
     description: 
       'Our Glazed Donut is a soft, airy delight coated with a shiny layer of sweet glaze. The perfect combination of texture and flavor, it’s made fresh daily to provide an irresistible taste. Enjoy this timeless classic with a cup of coffee or as a standalone treat anytime.',
     rating: 4.7,
-    image: 'public/products/glazed_donut.jpg',
+    image: 'products/glazed_donut.jpg',
     category_id: 3,
     seller_id: 2,
     default_price: 8,
@@ -139,7 +137,7 @@ export const products: Product[] = [
     description: 
       'This Chocolate Sprinkled Donut is a feast for both the eyes and the palate. It features a soft donut base, a layer of rich chocolate glaze, and a generous topping of colorful sprinkles. A delightful treat for any occasion, it’s a perfect snack for all ages.',
     rating: 4.9,
-    image: 'public/products/chocolate_sprinkled_donut.jpg',
+    image: 'products/chocolate_sprinkled_donut.jpg',
     category_id: 3,
     seller_id: 2,
     default_price: 10,
@@ -161,7 +159,7 @@ export const products: Product[] = [
     description: 
       'Our Sourdough Bread is a handcrafted loaf made with a slow fermentation process for that perfect tangy flavor. Its crusty exterior and soft, chewy interior make it ideal for sandwiches, toasts, or enjoying on its own. Made with natural ingredients, it’s a healthy and tasty choice.',
     rating: 4.6,
-    image: 'public/products/sourdough_bread.jpg',
+    image: 'products/sourdough_bread.jpg',
     category_id: 4,
     seller_id: 1,
     default_price: 20,
@@ -182,7 +180,7 @@ export const products: Product[] = [
     description: 
       'This traditional French Baguette is baked to golden perfection with a crispy crust and soft, fluffy interior. Ideal for pairing with cheese, spreads, or soups, it is made with simple, high-quality ingredients. Perfect for elevating your dining experience with a touch of authenticity.',
     rating: 4.4,
-    image: 'public/products/baguette.jpg',
+    image: 'products/baguette.jpg',
     category_id: 4,
     seller_id: 1,
     default_price: 15,
