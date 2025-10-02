@@ -28,8 +28,6 @@
     "test:ebony": "nx test ebony",
     "test:fury": "nx test fury",
     "test:whisper": "nx test whisper",
-    "//--- INSTALL ---//": "---",
-    "install": "pnpm install",
     "//--- CAPACITOR SYNC (Development) ---//": "---",
     "sync:ash-dev": "pnpm build:ash-dev && (cd apps/ash && npx cap sync)",
     "sync:ebony-dev": "pnpm build:ebony-dev && (cd apps/ebony && npx cap sync)",
