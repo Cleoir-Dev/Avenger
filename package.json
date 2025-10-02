@@ -87,7 +87,7 @@
     "@nx/eslint": "21.5.2",
     "@nx/eslint-plugin": "21.5.2",
     "@nx/jest": "21.5.2",
-    "@nx/js": "21.5.2",
+    "@nx/js": "21.6.2",
     "@nx/web": "21.5.2",
     "@nx/workspace": "21.5.2",
     "@nxext/ionic-angular": "^21.0.0",
@@ -98,11 +98,12 @@
     "@types/jest": "^30.0.0",
     "@types/node": "20.19.9",
     "@typescript-eslint/utils": "^8.40.0",
-    "angular-eslint": "^20.2.0",
+    "angular-eslint": "^20.3.0",
     "autoprefixer": "^10.4.0",
     "cypress": "^14.2.1",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-cypress": "^3.5.0",
     "jest": "^30.0.2",
     "jest-environment-jsdom": "^30.0.2",
@@ -118,7 +119,8 @@
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2",
-    "typescript-eslint": "^8.40.0"
+    "typescript-eslint": "^8.40.0",
+    "verdaccio": "^6.0.5"
   },
   "dependencies": {
     "@angular/common": "~20.2.0",
@@ -140,5 +142,8 @@
     "rxjs": "~7.8.0",
     "uuid": "^13.0.0",
     "zone.js": "~0.15.0"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }

@@ -8,3 +8,35 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
+
+// text sizes
+.small {
+    font-size: var(--font-size-small) !important;
+  }
+  .medium {
+    font-size: var(--font-size-medium) !important;
+  }
+  .text-title {
+    font-size: var(--font-size-title) !important;
+  }
+  .large {
+    font-size: var(--font-size-large) !important;
+  }
+  .xlarge {
+    font-size: var(--font-size-x-large) !important;
+  }
+  
+  // font-weight
+  .text-weight-500 {
+    font-weight: 500;
+  }
+  
+  .srchBar {
+    .searchbar-input {
+      font-size: var(--font-size-medium) !important;
+    }
+    .searchbar-input-container {
+      height: 40px;
+    }
+  }
+  

@@ -25,6 +25,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "../interfaces/tsconfig.lib.json"
+    },
+    {
+      "path": "../dummy-data/tsconfig.lib.json"
     }
   ]
 }

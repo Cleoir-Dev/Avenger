@@ -1,0 +1,7 @@
+{
+  "name": "@avenger/dummy-data",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@avenger/interfaces": "0.0.1"
+  }
+}

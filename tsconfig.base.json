@@ -15,8 +15,24 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@avenger/service": ["libs/service/src/index.ts"],
-      "@avenger/utils": ["libs/utils/src/index.ts"]
+      "@avenger/components": [
+        "libs/components/src/index.ts"
+      ],
+      "@avenger/service": [
+        "libs/service/src/index.ts"
+      ],
+      "@avenger/utils": [
+        "libs/utils/src/index.ts"
+      ],
+      "@avenger/interfaces": [
+        "libs/interfaces/src/index.ts"
+      ],
+      "@avenger/enums": [
+        "libs/enums/src/index.ts"
+      ],
+      "@avenger/dummy-data": [
+        "libs/dummy-data/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

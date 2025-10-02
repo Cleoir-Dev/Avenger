@@ -1,0 +1,22 @@
+{
+  "name": "dummy-data",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dummy-data/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dummy-data",
+        "main": "libs/dummy-data/src/index.ts",
+        "tsConfig": "libs/dummy-data/tsconfig.lib.json",
+        "assets": ["libs/dummy-data/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": ["type:data", "scope:shared"]
+}

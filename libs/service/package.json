@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^20.2.0",
-    "@angular/core": "^20.2.0"
+    "@angular/core": "^20.2.0",
+    "@avenger/interfaces": "0.0.1",
+    "@avenger/dummy-data": "0.0.1"
   },
   "sideEffects": false
 }
