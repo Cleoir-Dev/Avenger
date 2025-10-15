@@ -17,6 +17,11 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           {
+            "glob": "**/*",
+            "input": "apps/whisper/src/public",
+            "output": "./"
+          },
+          {
             "glob": "**/*.svg",
             "input": "node_modules/ionicons/dist/ionicons/svg",
             "output": "./svg"

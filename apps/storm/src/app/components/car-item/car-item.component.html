@@ -1,0 +1,39 @@
+<ion-card>
+  @if(!isViewAll()) {
+
+  <ion-thumbnail>
+    <ion-badge color="dark">
+      {{ car()?.brand }}
+      <img [src]="car()?.brandLogo" />
+    </ion-badge>
+
+    <img class="car-image" [src]="car()?.image" />
+  </ion-thumbnail>
+
+  <ion-item lines="none">
+    <ion-label>
+      <ion-text color="dark">
+        {{ car()?.model }}
+      </ion-text>
+      <p class="desc">{{ car()?.description }}</p>
+
+      <p class="price">
+        <ion-text color="dark">
+          Starting at {{ car()?.price | currency : "USD" }}
+        </ion-text>
+      </p>
+    </ion-label>
+
+    <ion-button slot="end" color="light" shape="round">
+      <ion-icon
+        color="dark"
+        slot="icon-only"
+        name="bookmark-outline"
+      ></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  } @else {
+  <app-view-all-card [route]="['/cars']"></app-view-all-card>
+  }
+</ion-card>

@@ -1,0 +1,16 @@
+ion-item-divider {
+    --padding-start: 5px;
+    --padding-inline-end: 5px;
+    --background: transparent;
+    ion-label {
+      font-size: var(--ion-font-size-xl);
+      font-weight: var(--ion-font-weight-bold);
+    }
+    ion-button {
+      font-size: 0.8rem;
+      ion-icon {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
