@@ -1,25 +1,22 @@
-import { Component, EnvironmentInjector, inject } from '@angular/core';
-import {
-  IonTabs,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonLabel,
-} from '@ionic/angular/standalone';
+import { Component, OnInit } from '@angular/core';
+import { IonTabs, IonTabBar, IonTabButton, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { triangle, ellipse, square } from 'ionicons/icons';
+import { chatboxEllipsesOutline, heartOutline, homeOutline, personOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
-  templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss'],
+  templateUrl: './tabs.page.html',
+  styleUrls: ['./tabs.page.scss'],
   standalone: true,
-  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
+  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon]
 })
-export class TabsPage {
-  public environmentInjector = inject(EnvironmentInjector);
+export class TabsPage implements OnInit {
 
-  constructor() {
-    addIcons({ triangle, ellipse, square });
+  constructor() { 
+    addIcons({ homeOutline, personOutline, heartOutline, chatboxEllipsesOutline });
   }
+
+  ngOnInit() {
+  }
+
 }
